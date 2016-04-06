@@ -1,7 +1,7 @@
 name: FancyTrails
 main: net.zyrkcraft.fancytrails.Plugin
 description: Gives your players the ability to look cool!
-version: 0.4
+version: 0.5
 author: ZyrkRan
 
 commands:
