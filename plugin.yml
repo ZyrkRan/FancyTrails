@@ -1,0 +1,11 @@
+name: FancyTrails
+main: net.zyrkcraft.fancytrails.Plugin
+description: Gives your players the ability to look cool!
+version: 0.4
+author: ZyrkRan
+
+commands:
+  fancytrails:
+    description: Open the trails GUI 
+    aliases: [ft, t]
+    

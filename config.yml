@@ -1,0 +1,32 @@
+settings:
+  #in ticks (20 ticks = 1 second)
+  delay: 10 
+  #Please consider leaving this enabled to support me!
+  login-announcement: true
+  
+messages:
+  inventory-title: '&1&lFancy Trails'
+  no-permission: '&cYou dont have permission to do that!'
+
+lores:
+  diamonds: 'Diamonds will spawn around you!'
+  gold-ingots: 'Golden ingots will spawn around you!'
+  iron-ingots: 'Iron ingots will spawn around you!'
+  emeralds: 'Emeralds will spawn around you!'
+  lapis-lazuli: 'Lapis Lazuli will spawn around you!'
+  redstone: 'Redstone will spawn around you!'
+  wool: 'Wool will spawn around you!'
+  make-it-rain: 'All kind of minerals and;valuable items will spawn around you!'
+  rainbow-wool: 'Every single colored wool on the;game will spawn around you!'
+  colored-dye: 'Every single dye on the;game will spawn around you!'
+  rainbow-carpet: 'Little sizes of colored will;spawn around the player!'
+  rainbow-glass: 'Colored stained glass;spawns around the player!'
+  bacon: 'WHO DOES NOT LOVE BACON!?!?'
+  custom: 'This trail is set by the owner of the server'
+  
+#Specify the items that the custom trail should drop
+custom-trail:
+  - DIAMOND_BLOCK
+  - GOLD_BLOCK
+  - EMERALD_BLOCK
+  - EXP_BOTTLE
