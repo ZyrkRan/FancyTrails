@@ -1,9 +1,11 @@
 package net.zyrkcraft.fancytrails.utils;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import net.zyrkcraft.fancytrails.Plugin;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Color;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.Listener;
@@ -30,6 +32,18 @@ public class ItemUtils implements Listener{
 		item.setItemMeta(meta);
 		return item;
 	}
+	
+    public static ItemStack createItemWithNameAndLore(final ItemStack item, final String name, final String... lore) {
+        final ArrayList<String> list = new ArrayList<String>();
+        final ItemMeta meta = item.getItemMeta();
+        for (final String string : lore) {
+            list.add(Plugin.color(string));
+        }
+        meta.setLore((List)list);
+        meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
+        item.setItemMeta(meta);
+        return item;
+    }
 	
 	public static ItemStack enchantItem(ItemStack item, Enchantment paramEnchantment, int level){
 		item.addEnchantment(paramEnchantment, level);

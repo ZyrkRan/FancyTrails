@@ -120,7 +120,7 @@ public class Task implements Runnable{
 			return;
 		}
 		
-		Item item = getOwner().getWorld().dropItem(getOwner().getLocation().add(0,2,0), ItemUtils.createItemWithName(itemlist.get(getRandom().nextInt(itemlist.size())), UUID.randomUUID().toString()));
+		Item item = getOwner().getWorld().dropItem(getOwner().getLocation().add(0,2,0), ItemUtils.createItemWithNameAndLore(itemlist.get(getRandom().nextInt(itemlist.size())), UUID.randomUUID().toString(), "ENTITY_DROPPED"));
 		item.setVelocity(getVectors()[getRandom().nextInt(getVectors().length)]);
 		item.setPickupDelay(99999*99999);
 		TrailManager.getDataManager().getTrailItems().add(item);

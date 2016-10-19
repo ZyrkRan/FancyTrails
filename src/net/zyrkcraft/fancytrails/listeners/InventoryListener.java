@@ -7,10 +7,15 @@ import net.zyrkcraft.fancytrails.utils.Messages;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityPortalEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryPickupItemEvent;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.ItemStack;
 
 public class InventoryListener implements Listener{
@@ -166,5 +171,20 @@ public class InventoryListener implements Listener{
 			}
 		}
 	}
+	
+    @EventHandler
+    public void onItemTeleport(final EntityPortalEvent event) {
+        final Entity entity = event.getEntity();
+        if (entity instanceof Item && ((Item)entity).getItemStack().getItemMeta().getLore().get(0).equals("ENTITY_DROPPED")) {
+            event.setCancelled(true);
+        }
+    }
+    
+    @EventHandler
+    public void onHopperItemDeposit(final InventoryPickupItemEvent event) {
+        if (event.getInventory().getType().equals((Object)InventoryType.HOPPER) && event.getItem().getItemStack().getItemMeta().getLore().get(0).equalsIgnoreCase("ENTITY_DROPPED")) {
+            event.setCancelled(true);
+        }
+    }
 
 }
