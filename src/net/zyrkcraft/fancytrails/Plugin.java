@@ -15,6 +15,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Item;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.mcstats.Metrics;
 
 public class Plugin extends JavaPlugin{
 	
@@ -39,6 +40,14 @@ public class Plugin extends JavaPlugin{
 		
 		// register commands
 		getCommand("fancytrails").setExecutor(new CommandFancyTrails());
+		
+		// MCStats
+		try {
+			Metrics metrics = new Metrics(this);
+			metrics.start();
+		} catch (Exception e) {
+			// no connection
+		}
 	}
 	
 	public void onDisable() {
