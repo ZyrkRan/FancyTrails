@@ -1,3 +1,0 @@
-# FancyTrails
-
-Code is outdated! 

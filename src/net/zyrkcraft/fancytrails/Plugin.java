@@ -22,7 +22,6 @@ public class Plugin extends JavaPlugin{
 	private static InventoryManager invManager;
 	private static TrailManager trailManager;
 	
-	@Override
 	public void onEnable(){
 		instance = this;
 		
@@ -42,7 +41,6 @@ public class Plugin extends JavaPlugin{
 		getCommand("fancytrails").setExecutor(new CommandFancyTrails());
 	}
 	
-	@Override
 	public void onDisable() {
 		if (TrailManager.getDataManager().getRunningTasks().isEmpty() || TrailManager.getDataManager().getFloatingItems().isEmpty() || TrailManager.getDataManager().getTrailItems().isEmpty()){
 			return;

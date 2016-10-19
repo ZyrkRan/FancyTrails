@@ -25,7 +25,7 @@ public class CommandFancyTrails implements CommandExecutor{
 		
 		if (args.length == 0){
 			Plugin.getInventoryManager().getInventoryGUI().open(player);
-			player.playSound(player.getLocation(), Sound.NOTE_PLING, Integer.MAX_VALUE, Integer.MAX_VALUE);
+			player.playSound(player.getLocation(), Sound.BLOCK_NOTE_PLING, Integer.MAX_VALUE, Integer.MAX_VALUE);
 			player.sendMessage(ChatColor.GREEN + "You've opened the Trails GUI!");
 			return true;
 		}

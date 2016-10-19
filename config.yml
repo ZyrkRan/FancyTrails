@@ -3,7 +3,7 @@ settings:
   delay: 10 
   #Please consider leaving this enabled to support me!
   login-announcement: true
-  
+
 messages:
   inventory-title: '&1&lFancy Trails'
   no-permission: '&cYou dont have permission to do that!'

@@ -30,7 +30,7 @@ public class InventoryListener implements Listener{
 		
 		if (event.getInventory().equals(Plugin.getInventoryManager().getInventoryGUI().getInventory())){
 			event.setCancelled(true); // Cancel event
-			player.playSound(player.getLocation(), Sound.NOTE_PLING, Integer.MAX_VALUE, Integer.MAX_VALUE);
+			player.playSound(player.getLocation(), Sound.BLOCK_NOTE_PLING, Integer.MAX_VALUE, Integer.MAX_VALUE);
 			
 			ItemStack item = event.getCurrentItem();
 			
