@@ -1,7 +1,6 @@
 package net.zyrkcraft.fancytrails.utils;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import net.zyrkcraft.fancytrails.Plugin;
 
@@ -33,13 +32,15 @@ public class ItemUtils implements Listener{
 		return item;
 	}
 	
-    public static ItemStack createItemWithNameAndLore(final ItemStack item, final String name, final String... lore) {
+	public static ItemStack createItemWithNameAndLore(final ItemStack item, final String name, final String... lore) {
         final ArrayList<String> list = new ArrayList<String>();
         final ItemMeta meta = item.getItemMeta();
         for (final String string : lore) {
             list.add(Plugin.color(string));
         }
-        meta.setLore((List)list);
+        if (!list.isEmpty()){
+            meta.setLore(list);
+        }
         meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
         item.setItemMeta(meta);
         return item;

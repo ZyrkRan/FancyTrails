@@ -1,8 +1,6 @@
 settings:
   #in ticks (20 ticks = 1 second)
-  delay: 10 
-  #Please consider leaving this enabled to support me!
-  login-announcement: true
+  delay: 10
 
 messages:
   inventory-title: '&1&lFancy Trails'

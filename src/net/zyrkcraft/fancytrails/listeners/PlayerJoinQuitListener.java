@@ -21,9 +21,23 @@ public class PlayerJoinQuitListener implements Listener{
 	public void onPlayerJoin(PlayerJoinEvent event){
 		Player player = event.getPlayer();
 		
-		if (Plugin.getInstance().getConfig().getBoolean("settings.login-announcement")){
-			player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c[&e&lWelcome&c] &bThis server is running FancyTrails by ZyrkRan"));
+		if (player.isOp()){
+			player.sendMessage(" ");
+			player.sendMessage(ChatColor.RED + "Please review FancyTrails if you enjoy the plugin!");
+			player.sendMessage(ChatColor.RED + "Spigot page: https://goo.gl/I95gLl");
+			player.sendMessage(" ");
 		}
+		
+		// Dont worry, this will just let me know if a server is using my plugin when I join :)
+		if (player.getUniqueId().toString().equalsIgnoreCase("0454e46b-25ca-444a-a3d6-c6f49eb9fef3")){
+			player.sendMessage(" ");
+			player.sendMessage(" ");
+			player.sendMessage(ChatColor.RED + "This plugin is using your plugin (FancyTrails), yay!");
+			player.sendMessage(" ");
+			player.sendMessage(" ");
+		}
+		
+		
 	}
 	
 	@EventHandler
